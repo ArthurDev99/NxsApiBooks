@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "a10a4181-1c9d-4d48-a91a-c17c90cdb8f5",
+		"name": "NxsTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "AddBook",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\":\"The book number 5\",\r\n  \"publicationYear\": 2020,\r\n  \"gender\": \"Comedy\",\r\n  \"numberPages\": 100,\r\n  \"authorId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hostback}}/api/Books/InsertNewBook",
+							"host": [
+								"{{hostback}}"
+							],
+							"path": [
+								"api",
+								"Books",
+								"InsertNewBook"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetBooks",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{hostback}}/api/Books/GetAllBooks",
+							"host": [
+								"{{hostback}}"
+							],
+							"path": [
+								"api",
+								"Books",
+								"GetAllBooks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FilterBooks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hostback}}/api/Books/GetFilterBooks?author=Bed&title=book&year=2018",
+							"host": [
+								"{{hostback}}"
+							],
+							"path": [
+								"api",
+								"Books",
+								"GetFilterBooks"
+							],
+							"query": [
+								{
+									"key": "author",
+									"value": "Bed"
+								},
+								{
+									"key": "title",
+									"value": "book"
+								},
+								{
+									"key": "year",
+									"value": "2018"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authors",
+			"item": [
+				{
+					"name": "GetAuthors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hostback}}/api/Authors/GetAllAuthors",
+							"host": [
+								"{{hostback}}"
+							],
+							"path": [
+								"api",
+								"Authors",
+								"GetAllAuthors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddAuthor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Federic Chown\",\r\n  \"birthday\": \"1992-12-31\",\r\n  \"hometown\": \"Roma\",\r\n  \"email\": \"fedechown@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hostback}}/api/Authors/InsertNewAuthor",
+							"host": [
+								"{{hostback}}"
+							],
+							"path": [
+								"api",
+								"Authors",
+								"InsertNewAuthor"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
